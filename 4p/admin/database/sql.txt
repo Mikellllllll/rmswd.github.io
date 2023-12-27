@@ -1,0 +1,80 @@
+
+CREATE DATABASE IF NOT EXISTS peace;
+
+USE peace;
+
+CREATE TABLE IF NOT EXISTS admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(999) NULL,
+    username VARCHAR(999) NOT NULL,
+    password VARCHAR(999) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS users(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(250) NULL,
+    password VARCHAR(250) NULL,
+    name VARCHAR(250) NULL,
+    contact VARCHAR(250) NULL
+);
+
+CREATE TABLE IF NOT EXISTS barangay (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    barangay VARCHAR(999) NULL,
+    color VARCHAR(999) NOT NULL
+    
+);
+
+CREATE TABLE login_log (
+    log_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    login_time DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+
+INSERT INTO admins (username, password) VALUES ('admin', 'admin');
+
+CREATE TABLE household_data (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    last_name VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    middle_name VARCHAR(255) NOT NULL,
+    extension_name VARCHAR(255),
+    sexM VARCHAR(255) NOT NULL,
+    household_id_number VARCHAR(255) NOT NULL,
+    barangay VARCHAR(255) NOT NULL,
+    city_municipality VARCHAR(255) NOT NULL,
+    province VARCHAR(255) NOT NULL,
+    region VARCHAR(255) NOT NULL,
+    income VARCHAR(255) NOT NULL,
+    child_name VARCHAR(255) NOT NULL,
+    child_dob VARCHAR(10),
+    attending_school VARCHAR(255) NOT NULL,
+    reason_for_not_attending VARCHAR(255),
+    school_name VARCHAR(255),
+    sexC VARCHAR(255),
+    child1_name VARCHAR(255),
+    child1_address VARCHAR(255),
+    child1_school_name VARCHAR(255),
+    child1_school_address VARCHAR(255),
+    child1_grade_level VARCHAR(255),
+    child2_name VARCHAR(255),
+    child2_address VARCHAR(255),
+    child2_school_name VARCHAR(255),
+    child2_school_address VARCHAR(255),
+    child2_grade_level VARCHAR(255),
+    child3_name VARCHAR(255),
+    child3_address VARCHAR(255),
+    child3_school_name VARCHAR(255),
+    child3_school_address VARCHAR(255),
+    child3_grade_level VARCHAR(255),
+    lon VARCHAR(255),
+    lat VARCHAR(255),
+    Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+
+
