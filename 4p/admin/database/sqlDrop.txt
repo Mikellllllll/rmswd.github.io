@@ -1,7 +1,0 @@
-USE peace;
-
-DROP TABLE IF EXISTS admins;
-DROP TABLE IF EXISTS markers;
-DROP TABLE IF EXISTS tbl_id;
-DROP TABLE IF EXISTS admins;
-DROP TABLE IF EXISTS household_data;
